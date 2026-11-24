@@ -2,7 +2,6 @@
 
 struct stat;
 struct procinfo;
-struct memuso;
 struct traduccion;
 
 // system calls
@@ -28,16 +27,6 @@ char *sys_sbrk(int, int);
 int pause(int);
 int uptime(void);
 int sync(void);
-int getprocs(struct procinfo *, int);
-int sem_init(int, int);
-int sem_wait(int);
-int sem_post(int);
-int sem_valor(int);
-int setprio(int, int);
-int memuso(struct memuso *);
-int traducir(uint64, struct traduccion *);
-int fallos_pagina(void);
-int mostrar_fallos(int);
 
 // ulib.c
 int stat(const char *, struct stat *);

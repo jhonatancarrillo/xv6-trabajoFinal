@@ -24,7 +24,6 @@ OBJS = \
   $K/sleeplock.o \
   $K/file.o \
   $K/pipe.o \
-  $K/sem.o \
   $K/exec.o \
   $K/sysfile.o \
   $K/kernelvec.o \
@@ -153,9 +152,7 @@ UPROGS=\
 	$U/_forphan\
 	$U/_dorphan\
 	$U/_sync\
-	$U/_ps\
 	$U/_carga\
-	$U/_prio\
 	$U/_mapa\
 	$U/_crecer\
 	$U/_limite\
@@ -164,7 +161,6 @@ UPROGS=\
 	$U/_caso_falla1\
 	$U/_caso_falla2\
 	$U/_caso_falla3\
-	$U/_asignar_mem\
 	$U/_provocar_fallo\
 	$U/_reemplazo_pag\
 	$U/_reservar_tabla\
