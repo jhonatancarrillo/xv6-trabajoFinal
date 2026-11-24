@@ -10,7 +10,7 @@ main(int argc, char *argv[])
   char buf[512];
   char dest[64];
   char base[10];
-  int 
+  int len;
 
   if(argc != 2) {
     fprintf(2, "Uso: backup <archivo>\n");
