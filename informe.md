@@ -42,6 +42,7 @@ Implementar y validar un mecanismo de respaldo y restauración de archivos en el
 La solución se diseñó como un conjunto de programas de usuario invocables desde la consola de xv6. El flujo de funcionamiento se dividió en dos fases: respaldo y restauración.
 * **Fase de Respaldo (`backup.c`):** El programa abre el archivo origen en modo lectura y verifica mediante la función `stat` si el archivo destino ya existe. Si no existe, procede a leer en bloques y a escribir en el destino. Durante la escritura, calcula un *checksum* (suma de comprobación) de los bytes transferidos para garantizar la integridad.
 * **Fase de Restauración (`restore.c`):** El programa recibe la ruta del respaldo y el destino. Abre el respaldo, lee el contenido y lo escribe en el nuevo archivo, manejando los errores si la copia no existe.
+![Diagrama de Flujo](imagenes/diagrama_analisis.jpeg)
 
 *Nota sobre el control de versiones:* El diseño del comando de respaldo integró en un solo archivo (`backup.c`) las funcionalidades iniciales y las mejoras de seguridad y checksum. Esta continuidad en Git conserva el historial de cambios y evita mantener copias paralelas del comando.
 
