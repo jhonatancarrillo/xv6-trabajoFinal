@@ -21,16 +21,6 @@
 #define SYS_mkdir  20
 #define SYS_close  21
 #define SYS_sync   22
-#define SYS_getprocs 23
-#define SYS_sem_init 24
-#define SYS_sem_wait 25
-#define SYS_sem_post 26
-#define SYS_sem_valor 27
-#define SYS_setprio 28
-#define SYS_memuso 29
-#define SYS_traducir 30
-#define SYS_fallos_pagina 31
-#define SYS_mostrar_fallos 32
 #define SYS_create_backup 22
 #define SYS_restore_file  23
 #define SYS_list_backups  24

@@ -106,16 +106,6 @@ extern uint64 sys_link(void);
 extern uint64 sys_mkdir(void);
 extern uint64 sys_close(void);
 extern uint64 sys_sync(void);
-extern uint64 sys_getprocs(void);
-extern uint64 sys_sem_init(void);
-extern uint64 sys_sem_wait(void);
-extern uint64 sys_sem_post(void);
-extern uint64 sys_sem_valor(void);
-extern uint64 sys_setprio(void);
-extern uint64 sys_memuso(void);
-extern uint64 sys_traducir(void);
-extern uint64 sys_fallos_pagina(void);
-extern uint64 sys_mostrar_fallos(void);
 
 // An array mapping syscall numbers from syscall.h
 // to the function that handles the system call.
@@ -146,16 +136,6 @@ static uint64 (*syscalls[])(void) = {
   [SYS_mkdir]   = sys_mkdir,
   [SYS_close]   = sys_close,
   [SYS_sync]    = sys_sync,
-  [SYS_getprocs] = sys_getprocs,
-  [SYS_sem_init] = sys_sem_init,
-  [SYS_sem_wait] = sys_sem_wait,
-  [SYS_sem_post] = sys_sem_post,
-  [SYS_sem_valor] = sys_sem_valor,
-  [SYS_setprio] = sys_setprio,
-  [SYS_memuso]  = sys_memuso,
-  [SYS_traducir] = sys_traducir,
-  [SYS_fallos_pagina] = sys_fallos_pagina,
-  [SYS_mostrar_fallos] = sys_mostrar_fallos,
   // clang-format on
 };
 
