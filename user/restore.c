@@ -12,7 +12,7 @@ main(int argc, char *argv[])
   char base[10];
   int len;
 
-  if(argc != 2){
+  if(argc != 2) {
     fprintf(2, "Uso: restore <archivo>\n");
     exit(1);
   }
@@ -28,19 +28,19 @@ main(int argc, char *argv[])
   strcpy(src + strlen(src), base);
   strcpy(src + strlen(src), ".bak");
 
-  if((fd_src = open(src, O_RDONLY)) < 0){
+  if((fd_src = open(src, O_RDONLY)) < 0) {
     fprintf(2, "restore: no existe respaldo para %s\n", argv[1]);
     exit(1);
   }
 
   unlink(argv[1]);
-  if((fd_dst = open(argv[1], O_CREATE | O_WRONLY)) < 0){
+  if((fd_dst = open(argv[1], O_CREATE | O_WRONLY)) < 0) {
     fprintf(2, "restore: no se pudo restaurar %s\n", argv[1]);
     close(fd_src);
     exit(1);
   }
 
-  while((n = read(fd_src, buf, sizeof(buf))) > 0){
+  while((n = read(fd_src, buf, sizeof(buf))) > 0) {
     if(write(fd_dst, buf, n) != n){
       fprintf(2, "restore: error al escribir datos\n");
       close(fd_src);
