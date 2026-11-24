@@ -69,8 +69,10 @@ Para validar el sistema, se desarrolló el programa `user/test_backup.c`, el cua
 | CP07 | Restaurar archivo vacío (0 bytes) | El archivo se restaura vacío. | **Éxito (OK)** - Checksum 0. |
 | CP08 | Restaurar archivo extenso (2048 bytes) | El archivo se restaura completo. | **Éxito (OK)** - Checksum correcto. |
 
-*(Insertar aquí Figura 3: Captura de la terminal con los resultados de test_backup)*
-
+**Figura 3**  
+*Ejecución manual en xv6: respaldo con checksum, restauración y manejo de errores*  
+![Prueba de Ejecución](imagenes/pruebas.png)
+ 
 ## 8. Análisis de Resultados
 Los resultados obtenidos demuestran que el sistema de respaldo y restauración funciona de manera robusta en xv6. Los casos CP01 a CP03 confirmaron que la transferencia de datos es íntegra. Los casos CP04 y CP05 demostraron que el programa es capaz de manejar errores sin colapsar el sistema operativo. El caso CP07 validó el manejo de archivos vacíos, y el CP08 confirmó que la lectura por bloques (con un buffer de 512 bytes, definido en `MAX_BUF`) permite manejar archivos más grandes sin problemas de desbordamiento.
 
