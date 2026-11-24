@@ -12,7 +12,7 @@ main(int argc, char *argv[])
   char base[10];
   int len;
 
-  if(argc != 2){
+  if(argc != 2) {
     fprintf(2, "Uso: backup <archivo>\n");
     exit(1);
   }
@@ -20,7 +20,7 @@ main(int argc, char *argv[])
   create_backup();
   mkdir("/backups");
 
-  if((fd_src = open(argv[1], O_RDONLY)) < 0){
+  if((fd_src = open(argv[1], O_RDONLY)) < 0) {
     fprintf(2, "backup: no se puede abrir %s\n", argv[1]);
     exit(1);
   }
@@ -35,14 +35,14 @@ main(int argc, char *argv[])
   strcpy(dest + strlen(dest), ".bak");
 
   unlink(dest);
-  if((fd_dst = open(dest, O_CREATE | O_WRONLY)) < 0){
+  if((fd_dst = open(dest, O_CREATE | O_WRONLY)) < 0) {
     fprintf(2, "backup: no se pudo crear %s\n", dest);
     close(fd_src);
     exit(1);
   }
 
-  while((n = read(fd_src, buf, sizeof(buf))) > 0){
-    if(write(fd_dst, buf, n) != n){
+  while((n = read(fd_src, buf, sizeof(buf))) > 0) {
+    if(write(fd_dst, buf, n) != n) {
       fprintf(2, "backup: error de escritura\n");
       close(fd_src);
       close(fd_dst);
