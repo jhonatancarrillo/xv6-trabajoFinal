@@ -7,6 +7,7 @@ int
 main(int argc, char *argv[])
 {
   int fd_src, fd_dst, n;
+  int checksum = 0; //<-- NUEVA LÍNEA
   char buf[512];
   char dest[64];
   char base[10];
@@ -48,10 +49,14 @@ main(int argc, char *argv[])
       close(fd_dst);
       exit(1);
     }
+    for (int i = 0; i < n ; i++) {
+       checksum += buf[i];
+    }
   }
 
   close(fd_src);
   close(fd_dst);
   printf("Respaldo exitoso: %s -> %s\n", argv[1], dest);
+  printf("Checksum de integridad: %d\n", checksum); // <-- NUEVA LÍNEA
   exit(0);
 }
