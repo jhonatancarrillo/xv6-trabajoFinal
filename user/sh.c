@@ -132,8 +132,7 @@ runcmd(struct cmd *cmd)
 }
 
 int
-getcmd(char *buf, int nbuf)
-{
+getcmd(char *buf, int nbuf) {
   write(2, "$ ", 2);
   memset(buf, 0, nbuf);
   gets(buf, nbuf);
@@ -143,8 +142,7 @@ getcmd(char *buf, int nbuf)
 }
 
 int
-main(void)
-{
+main(void) {
   static char buf[100];
   int fd;
 
@@ -178,15 +176,13 @@ main(void)
 }
 
 void
-panic(char *s)
-{
+panic(char *s) {
   fprintf(2, "%s\n", s);
   exit(1);
 }
 
 int
-fork1(void)
-{
+fork1(void) {
   int pid;
 
   pid = fork();
@@ -199,8 +195,7 @@ fork1(void)
 // Constructors
 
 struct cmd *
-execcmd(void)
-{
+execcmd(void) {
   struct execcmd *cmd;
 
   cmd = malloc(sizeof(*cmd));
