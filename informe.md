@@ -121,21 +121,30 @@ Se modificaron e incorporaron los siguientes componentes en el código fuente de
 Para validar el sistema, se desarrolló el programa `user/test_backup.c`, el cual automatiza 8 casos de prueba (CP01 a CP08) mediante llamadas a `fork` y `exec`.
 
 **Tabla 1**  
-*Resultados de los casos de prueba automatizados*
+*Resultados de los casos de prueba automatizados en xv6*
 | Caso | Procedimiento | Resultado Esperado | Resultado Obtenido |
 | :--- | :--- | :--- | :--- |
-| CP01-03 | Backup, Restore y verificación normal | El archivo se respalda, se restaura y el checksum coincide. | **Éxito (OK)** - El sistema realizó las operaciones correctamente. |
-| CP04 | Backup de archivo inexistente | El sistema muestra un error controlado. | **Éxito (Error controlado)** - Mensaje: "no se puede abrir el origen". |
-| CP05 | Restore de copia inexistente | El sistema muestra un error controlado. | **Éxito (Error controlado)** - Mensaje: "no existe la copia". |
-| CP07 | Restaurar archivo vacío (0 bytes) | El archivo se restaura vacío. | **Éxito (OK)** - Checksum 0. |
-| CP08 | Restaurar archivo extenso (2048 bytes) | El archivo se restaura completo. | **Éxito (OK)** - Checksum correcto. |
+| CP01 | Respaldo de archivo existente (`cp01.txt`). | El archivo se respalda y se genera un checksum. | **Éxito (OK)** - Checksum: 2641. |
+| CP02 | Restauración del archivo respaldado. | El archivo se recupera en su destino. | **Éxito (OK)** - Restauración exitosa. |
+| CP03 | Verificación de integridad. | El contenido restaurado coincide con el original. | **Éxito (OK)** - Validación correcta. |
+| CP04 | Backup de archivo inexistente. | El sistema muestra un error controlado sin colapsar. | **Éxito (OK)** - Mensaje: "backup: no se puede abrir...". |
+| CP05 | Restore de copia inexistente. | El sistema muestra un error controlado sin colapsar. | **Éxito (OK)** - Mensaje: "restore: no existe respaldo...". |
+| CP06 | Restaurar el mismo archivo varias veces. | El sistema soporta restauraciones múltiples sin errores. | **Éxito (OK)** - Dos restauraciones exitosas. |
+| CP07 | Archivo vacío (0 bytes). | El archivo se respalda y restaura correctamente. | **Éxito (OK)** - Checksum: 0. |
+| CP08 | Archivo extenso (2048 bytes). | El archivo grande se procesa por bloques correctamente. | **Éxito (OK)** - Checksum: 158660. |
 
-**Figura 5**  
-*Ejecución manual en xv6: respaldo con checksum, restauración y manejo de errores*  
-![Prueba de Ejecución](imagenes/pruebas.png)
-</div> 
+<div align="center">
+  <img src="imagenes/pruebas.png" width="800">
+  <p><i><strong>Figura 5:</strong> Ejecución manual en xv6: respaldo con checksum, restauración y manejo de errores.</i></p>
+</div>
 
-<div align="justify">
+<br>
+
+<div align="center">
+  <img src="imagenes/pruebas_automatizadas.png" width="800">
+  <p><i><strong>Figura 6:</strong> Salida de la suite de pruebas automatizadas (CP01 - CP08) demostrando la robustez del sistema.</i></p>
+</div>
+
 ## 8. Análisis de Resultados
 
 **Interpretación de los resultados**
