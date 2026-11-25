@@ -3242,12 +3242,12 @@ badwrite(char *s)
 void
 execout(char *s)
 {
-  for (int avail = 0; avail < 15; avail++) {
+  for (int avail = 0; avail < 15; avail++)  {
     int pid = fork();
     if (pid < 0) {
       printf("fork failed\n");
       exit(1);
-    } else if (pid == 0) {
+    } else if (pid == 0)  {
       // allocate all of memory.
       while (1) {
         char *a = sbrk(PGSIZE);
@@ -3282,7 +3282,7 @@ diskfull(char *s)
 
   unlink("diskfulldir");
 
-  for (fi = 0; done == 0 && '0' + fi < 0177; fi++) {
+  for (fi = 0; done == 0 && '0' + fi < 0177; fi++)  {
     char name[32];
     name[0] = 'b';
     name[1] = 'i';
@@ -3297,9 +3297,9 @@ diskfull(char *s)
       done = 1;
       break;
     }
-    for (int i = 0; i < MAXFILE; i++) {
+    for (int i = 0; i < MAXFILE; i++)  {
       char buf[BSIZE];
-      if (write(fd, buf, BSIZE) != BSIZE) {
+      if (write(fd, buf, BSIZE) != BSIZE)  {
         done = 1;
         close(fd);
         break;
@@ -3546,7 +3546,7 @@ drivetests(int quick, int continuous, char *justone)
       if (continuous != 2) {
         return 1;
       }
-    } else {
+    } else  {
       ntests += n;
     }
     if (!quick) {
@@ -3554,10 +3554,10 @@ drivetests(int quick, int continuous, char *justone)
         printf("usertests slow tests starting\n");
       n = runtests(slowtests, justone, continuous);
       if (n < 0) {
-        if (continuous != 2) {
+        if (continuous != 2)  {
           return 1;
         }
-      } else {
+      } else  {
         ntests += n;
       }
     }
