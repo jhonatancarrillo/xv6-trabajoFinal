@@ -7,16 +7,22 @@
 ---
 
 **CURSO:** Sistemas Operativos (IS – 380)
+
 **DOCENTE:** JAICO QUISPE, Lizbeth
 
 **TÍTULO DEL PROYECTO:**
 ## RESTAURACIÓN DE ARCHIVOS DESDE COPIA DE SEGURIDAD EN XV6
 
 **INTEGRANTES:**
+
 AVILA CONTRERAS, Nelsson
+
 CANCHO QUISPE, Carlos
+
 CARRILLO TINEO, Jhonatan
+
 CONTRERAS JANAMPA, Robinson Ismael
+
 CCONISLLA RIVERA, Climner Antony
 
 *Ayacucho – Perú, 2026*
@@ -78,21 +84,27 @@ Se modificaron e incorporaron los siguientes componentes en el código fuente de
 * **Makefile:** Se actualizó el archivo `Makefile` en la raíz del proyecto para incluir los nuevos ejecutables en la variable `UPROGS`, permitiendo que se compilen y se incluyan en la imagen del sistema de archivos (`fs.img`).
 * **Interfaz de sistema:** No se requirió la creación de nuevas llamadas al sistema; se reutilizaron las syscalls existentes de xv6.
 
-**Figura 1**  
-*Código del comando de respaldo (backup.c) - Parte 1: Inclusión de librerías y estructura principal*  
-![Código Backup 1](imagenes/backup_code1.png)
+<div align="center">
+  <img src="imagenes/backup_code1.png" width="700">
+  <p><i><strong>Figura 1:</strong> Código del comando de respaldo (backup.c) - Parte 1</i></p>
+</div>
+<br>
 
-**Figura 2**  
-*Código del comando de respaldo (backup.c) - Parte 2: Bucle de lectura, escritura y cálculo de checksum*  
-![Código Backup 2](imagenes/backup_code2.png)
+<div align="center">
+  <img src="imagenes/backup_code2.png" width="700">
+  <p><i><strong>Figura 2:</strong> Código del comando de respaldo (backup.c) - Parte 2</i></p>
+</div>
+<br>
 
-**Figura 3**  
-*Código del comando de restauración (restore.c) - Parte 1*  
-![Código Restore 1](imagenes/restore_code1.png)
+<div align="center">
+  <img src="imagenes/restore_code1.png" width="700">
+  <p><i><strong>Figura 3:</strong> Código del comando de restauración (restore.c) - Parte 1</i></p>
+</div>
+<br>
 
-**Figura 4**  
-*Código del comando de restauración (restore.c) - Parte 2*  
-![Código Restore 2](imagenes/restore_code2.png)
+<div align="center">
+  <img src="imagenes/restore_code2.png" width="700">
+  <p><i><strong>Figura 4:</strong> Código del comando de restauración (restore.c) - Parte 2</i></p>
 </div>
 
 <div align="justify">
