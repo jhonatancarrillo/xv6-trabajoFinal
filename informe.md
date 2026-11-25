@@ -53,8 +53,21 @@ Se modificaron e incorporaron los siguientes componentes en el código fuente de
 * **Makefile:** Se actualizó el archivo `Makefile` en la raíz del proyecto para incluir los nuevos ejecutables en la variable `UPROGS`, permitiendo que se compilen y se incluyan en la imagen del sistema de archivos (`fs.img`).
 * **Interfaz de sistema:** No se requirió la creación de nuevas llamadas al sistema; se reutilizaron las syscalls existentes de xv6.
 
-*(Insertar aquí Figura 1: Código de backup.c)*
-*(Insertar aquí Figura 2: Código de restore.c)*
+**Figura 1**  
+*Código del comando de respaldo (backup.c) - Parte 1: Inclusión de librerías y estructura principal*  
+![Código Backup 1](imagenes/backup_code1.png)
+
+**Figura 2**  
+*Código del comando de respaldo (backup.c) - Parte 2: Bucle de lectura, escritura y cálculo de checksum*  
+![Código Backup 2](imagenes/backup_code2.png)
+
+**Figura 3**  
+*Código del comando de restauración (restore.c) - Parte 1*  
+![Código Restore 1](imagenes/restore_code1.png)
+
+**Figura 4**  
+*Código del comando de restauración (restore.c) - Parte 2*  
+![Código Restore 2](imagenes/restore_code2.png)
 
 ## 7. Pruebas
 Para validar el sistema, se desarrolló el programa `user/test_backup.c`, el cual automatiza 8 casos de prueba (CP01 a CP08) mediante llamadas a `fork` y `exec`.
@@ -69,7 +82,7 @@ Para validar el sistema, se desarrolló el programa `user/test_backup.c`, el cua
 | CP07 | Restaurar archivo vacío (0 bytes) | El archivo se restaura vacío. | **Éxito (OK)** - Checksum 0. |
 | CP08 | Restaurar archivo extenso (2048 bytes) | El archivo se restaura completo. | **Éxito (OK)** - Checksum correcto. |
 
-**Figura 3**  
+**Figura 5**  
 *Ejecución manual en xv6: respaldo con checksum, restauración y manejo de errores*  
 ![Prueba de Ejecución](imagenes/pruebas.png)
  
