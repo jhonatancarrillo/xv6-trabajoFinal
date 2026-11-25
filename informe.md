@@ -176,7 +176,12 @@ El sistema actual no programa respaldos automáticos, no cifra los datos y requi
 
 Cox, R., Kaashoek, F., & Morris, R. (2025). *xv6: A simple, Unix-like teaching operating system* (RISC-V ed.). Massachusetts Institute of Technology. https://pdos.csail.mit.edu/6.828/2025/xv6/book-riscv-rev5.pdf
 
+International Organization for Standardization. (2018). *Information technology — Programming languages — C* (ISO/IEC 9899:2018). https://www.iso.org/standard/74528.html
+
 MIT PDOS. (2026). *xv6-riscv* [Código fuente]. GitHub. https://github.com/mit-pdos/xv6-riscv
+
+Git. (2026). *Git documentation: Everyday Git*. https://git-scm.com/docs/everyday
+
 </div>
 ---
 
