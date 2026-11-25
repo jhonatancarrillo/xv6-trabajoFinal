@@ -22,7 +22,7 @@ main(int argc, char *argv[])
   mkdir("/backups");
 
   if((fd_src = open(argv[1], O_RDONLY)) < 0) {
-    fprintf(2, "backup: no se puede abrir %s\n", argv[1]);
+    fprintf(2, "Error: no se puede abrir %s\n", argv[1]);
     exit(1);
   }
 
@@ -37,7 +37,7 @@ main(int argc, char *argv[])
 
   unlink(dest);
   if((fd_dst = open(dest, O_CREATE | O_WRONLY)) < 0) {
-    fprintf(2, "backup: no se pudo crear %s\n", dest);
+    fprintf(2, "Error: no se pudo crear %s\n", dest);
     close(fd_src);
     exit(1);
   }
