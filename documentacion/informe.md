@@ -1,4 +1,4 @@
-<div align="center">
+	<div align="center">
 
 # UNIVERSIDAD NACIONAL SAN CRISTÓBAL DE HUAMANGA
 ### FACULTAD DE MINAS, GEOLOGÍA Y CIVIL

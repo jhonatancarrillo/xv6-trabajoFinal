@@ -9,4 +9,4 @@ Este repositorio contiene el código fuente y la documentación del proyecto fin
 
 ## 🚀 Enlaces Rápidos
 *   [Ver Informe Técnico Completo](./documentacion/informe.md)
-*   [Ver Presentación en Canva](./documentacion/restauracion_xv6_canva.pptx)
+*   [Ver Presentación en Canva](./documentacion/restauracion_xv6_informe_v2.pptx)
